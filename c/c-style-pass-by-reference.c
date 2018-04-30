@@ -3,7 +3,7 @@
 
 // This could be a foreign function exposed by another programming language, for example.
 // Pass in two pointers to ints, `a` and `b`,
-int get_state(int *a, int *b) {
+void get_state(int *a, int *b) {
     // dereference the pointers
     *a = 42; // the address `a` now points to 42,
     *b = 1; // the address `b` now points to 1.
