@@ -5,11 +5,7 @@ import (
 	"net"
 )
 
-type port string
-type data string
-
 var (
-	udpPorts map[port]data
 	chans    map[port](chan string)
 )
 
@@ -51,22 +47,10 @@ func main() {
 }
 
 func init() {
-	udpPorts = make(map[port]data)
-	udpPorts["2561"] = "DIO"
-	udpPorts["2563"] = "GTEL"
-	udpPorts["2564"] = "GACK"
-	udpPorts["2565"] = "ERR"
-	udpPorts["2569"] = "SER"
 	chans = make(map[port](chan string))
 	chans["2561"] = make(chan string)
 	chans["2563"] = make(chan string)
 	chans["2564"] = make(chan string)
 	chans["2565"] = make(chan string)
 	chans["2569"] = make(chan string)
-}
-
-func checkErr(err error) {
-	if err != nil {
-		fmt.Println("Error: ", err)
-	}
 }
