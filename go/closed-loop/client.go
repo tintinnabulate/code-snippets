@@ -14,7 +14,7 @@ var (
 )
 
 func main() {
-    done := make(chan bool)
+	done := make(chan bool)
 	// for each port
 	for p, d := range udpPorts {
 		fmt.Printf("starting client sending %s to port %s\n", d, p)
@@ -40,10 +40,10 @@ func main() {
 				}
 				time.Sleep(time.Second * 1)
 			}
-            done <- true
+			done <- true
 		}(d, conn)
 	}
-    <-done
+	<-done
 }
 
 func init() {
