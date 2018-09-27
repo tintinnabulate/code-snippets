@@ -52,7 +52,7 @@ func main() {
 
 func init() {
 	udpPorts = make(map[port]data)
-	udpPorts["2561"] = "CMD"
+	udpPorts["2561"] = "DIO"
 	udpPorts["2563"] = "GTEL"
 	udpPorts["2564"] = "GACK"
 	udpPorts["2565"] = "ERR"
