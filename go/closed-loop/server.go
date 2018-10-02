@@ -6,7 +6,7 @@ import (
 )
 
 var (
-	chans    map[port](chan string)
+	chans map[port](chan string)
 )
 
 func main() {
@@ -29,18 +29,28 @@ func main() {
 		}(p, chans[p], serverConn)
 	}
 
+	a, b, c, d, e := 0, 0, 0, 0, 0
 	for {
+	if a == 1 && b == 1 && c == 1 && d == 1 && e == 1 {
+		fmt.Println("---")
+		a, b, c, d, e = 0, 0, 0, 0, 0
+	}
 		select {
 		case res := <-chans["2561"]:
 			fmt.Println(res)
+			a = 1
 		case res := <-chans["2563"]:
 			fmt.Println(res)
+			b = 1
 		case res := <-chans["2564"]:
 			fmt.Println(res)
+			c = 1
 		case res := <-chans["2565"]:
 			fmt.Println(res)
+			d = 1
 		case res := <-chans["2569"]:
 			fmt.Println(res)
+			e = 1
 		}
 	}
 

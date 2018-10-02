@@ -8,6 +8,7 @@ import (
 
 func main() {
 	done := make(chan bool)
+	x := 1
 	// for each port
 	for p, d := range udpPorts {
 		fmt.Printf("starting client sending %s to port %s\n", d, p)
@@ -21,6 +22,8 @@ func main() {
 		checkErr(err)
 		//defer conn.Close()
 		// create a separate process
+		time.Sleep(time.Duration(int(time.Second) * x))
+		x++
 		go func(d data, c *net.UDPConn) {
 			i := 0
 			for {
