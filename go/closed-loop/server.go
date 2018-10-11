@@ -31,10 +31,10 @@ func main() {
 
 	a, b, c, d, e := 0, 0, 0, 0, 0
 	for {
-	if a == 1 && b == 1 && c == 1 && d == 1 && e == 1 {
-		fmt.Println("---")
-		a, b, c, d, e = 0, 0, 0, 0, 0
-	}
+		if a == 1 && b == 1 && c == 1 && d == 1 && e == 1 {
+			fmt.Println("---")
+			a, b, c, d, e = 0, 0, 0, 0, 0
+		}
 		select {
 		case res := <-chans["2561"]:
 			fmt.Println(res)
