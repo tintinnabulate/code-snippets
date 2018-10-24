@@ -11,7 +11,7 @@ def server(address):
     while True:
         msg, addr = sock.recvfrom(8192)
         # safe_print(str(addr) + " : " + str(msg))
-        logger.debug(str(addr) + " : " + str(msg))
+        logger.debug("%s : %s", addr, msg)
 
 if __name__ == '__main__':
     logging.config.fileConfig('logging_config.ini')
